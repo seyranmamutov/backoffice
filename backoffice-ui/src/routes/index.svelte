@@ -1,2 +1,0 @@
-
-<div class="p24 fs20 fw7 cdi lh12 mb24">Backoffice Dashboard Goes Here.......</div>
