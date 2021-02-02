@@ -1,0 +1,24 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.tsn#{$infix} { transform:none; }
+		.tsi#{$infix} { transform:inherit; }
+
+		}
+	}
+	
+.tsr45  { transform: rotate(45deg); }
+.tsr90  { transform: rotate(90deg); }
+.tsr180 { transform: rotate(180deg); }
+.tsr270 { transform: rotate(270deg); }
+
+.tsty-50p { transform: translateY(-50%); }
+
+.tsr270d[aria-expanded="true"] {
+	.tsr270 {
+		transform: rotate(90deg) !important;
+	}
+}
+
+

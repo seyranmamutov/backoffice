@@ -1,0 +1,145 @@
+.ffp { font-family: "Poppins", sans-serif; }
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $value in $map-font-size {
+			.fs#{$value}#{$infix} {
+				font-size: #{$value}px;
+			}
+		}
+	}
+}
+
+// -------------------------------------------------------------------------------------------
+
+.fw1 { font-weight:100; }
+.fw2 { font-weight:200; }
+.fw3 { font-weight:300; }
+.fw4 { font-weight:400; }
+.fw5 { font-weight:500; }
+.fw6 { font-weight:600; }
+.fw7 { font-weight:700; }
+.fw8 { font-weight:800; }
+.fw9 { font-weight:900; }
+
+// -------------------------------------------------------------------------------------------
+
+.lh1   { line-height: 1;   }
+.lh11  { line-height: 1.1; }
+.lh12  { line-height: 1.2; }
+.lh13  { line-height: 1.3; }
+.lh14  { line-height: 1.4; }
+.lh15  { line-height: 1.5; }
+.lh16  { line-height: 1.6; }
+.lh17  { line-height: 1.7; }
+.lh18  { line-height: 1.8; }
+.lh19  { line-height: 1.9; }
+.lh2   { line-height: 2;   }
+
+// -------------------------------------------------------------------------------------------
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.tac#{$infix} { text-align: center; }
+		.tal#{$infix} { text-align: left; }
+		.tar#{$infix} { text-align: right; }
+	}
+}
+
+// -------------------------------------------------------------------------------------------
+
+.tdlt { text-decoration: line-through; }
+.tdn  { text-decoration: none; }
+.tdo  { text-decoration: overline; }
+.tdu  { text-decoration: underline; }
+
+.tdlt-h:hover { text-decoration: line-through; }
+.tdn-h:hover  { text-decoration: none; }
+.tdo-h:hover  { text-decoration: overline; }
+.tdu-h:hover  { text-decoration: underline; }
+.tdn-hf:hover, .tdn-hf:focus  { text-decoration: none; }
+
+// -------------------------------------------------------------------------------------------
+
+.ttc  { text-transform: capitalize; }
+.ttfw { text-transform: full-width; }
+.ttl  { text-transform: lowercase; }
+.ttn  { text-transform: none; }
+.ttu  { text-transform: uppercase; }
+
+// -------------------------------------------------------------------------------------------
+
+.lisn  { list-style: none; }
+.lisi  { list-style: inherit; }
+
+// -------------------------------------------------------------------------------------------
+
+.listn  { list-style-type: none; }
+.listd  { list-style-type: disc; }
+.listc  { list-style-type: circle; }
+.lists  { list-style-type: square; }
+.lists  { list-style-type: square; }
+.listdc { list-style-type: decimal; }
+
+// -------------------------------------------------------------------------------------------
+
+.ovwn { overflow-wrap: normal; }
+.ovwb { overflow-wrap: break-word; }
+
+// -------------------------------------------------------------------------------------------
+
+.toe { text-overflow: ellipsis; }
+.toc { text-overflow: clip; }
+
+// -------------------------------------------------------------------------------------------
+
+.wobn { word-break: normal; }
+.wobka { word-break: keep-all; }
+.wobba { word-break: break-all; }
+.wobbw { word-break: break-word; }
+
+// -------------------------------------------------------------------------------------------
+
+.usn  { user-select: none; }
+.ust  { user-select: text; }
+.usa  { user-select: all; }
+
+// -------------------------------------------------------------------------------------------
+
+.rzn  { resize: none; }
+.rzb  { resize: both; }
+.rzh  { resize: horizontal; }
+.rzv  { resize: vertical; }
+
+// -------------------------------------------------------------------------------------------
+
+.tall { text-align-last: left; }
+.talc { text-align-last: center; }
+.talr { text-align-last: right; }
+.talj { text-align-last: justify; }
+
+// -------------------------------------------------------------------------------------------
+
+.lsn  { letter-spacing: none; }
+.lsi  { letter-spacing: inherit; }
+
+.ls1  { letter-spacing: 1px; }
+.ls2  { letter-spacing: 2px; }
+.ls3  { letter-spacing: 3px; }
+
+// -------------------------------------------------------------------------------------------
+
+.wsn  { white-space: normal;}
+.wsp  { white-space: pre;}
+.wsnw { white-space: nowrap;}
+.wspw { white-space: pre-wrap;}
+.wspl { white-space: pre-line;}
+
+.fsi{
+	font-style: italic;
+}
+

@@ -1,0 +1,12 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.zm85#{$infix} { zoom: 85%;	}
+		.zm-n#{$infix} { zoom: normal; }
+
+		}
+	}
+
+
+

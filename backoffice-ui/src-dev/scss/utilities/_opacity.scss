@@ -1,0 +1,11 @@
+@each $value in $map-opacity {
+	.o#{$value} {
+		@if $value == 1 {
+			opacity: #{$value};
+		} @else if $value == 0 {
+			opacity: #{$value};
+		} @else {
+			opacity: #{"."}#{$value};
+		}
+	}
+}

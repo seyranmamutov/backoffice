@@ -1,0 +1,107 @@
+
+// MARGIN AND PADDINGS  ----------------------------------------------------------------------------------------------
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@each $prop, $abbrev in (margin: m, padding: p) {
+			@each $size in $map-spacers {
+				.#{$abbrev}#{$size}#{$infix} {
+					#{$prop}: #{$size}px;
+				}
+				.#{$abbrev}t#{$size}#{$infix},
+				.#{$abbrev}y#{$size}#{$infix} {
+					#{$prop}-top: #{$size}px;
+				}
+				.#{$abbrev}r#{$size}#{$infix},
+				.#{$abbrev}x#{$size}#{$infix} {
+					#{$prop}-right: #{$size}px;
+				}
+				.#{$abbrev}b#{$size}#{$infix},
+				.#{$abbrev}y#{$size}#{$infix} {
+					#{$prop}-bottom: #{$size}px;
+				}
+				.#{$abbrev}l#{$size}#{$infix},
+				.#{$abbrev}x#{$size}#{$infix} {
+					#{$prop}-left: #{$size}px;
+				}
+			}
+		}
+
+		@each $size in $map-spacers {
+			@if $size != 0 {
+				.m-#{$size}#{$infix} {
+					margin: -#{$size}px;
+				}
+				.mt-#{$size}#{$infix},
+				.my-#{$size}#{$infix} {
+					margin-top: -#{$size}px;
+				}
+				.mr-#{$size}#{$infix},
+				.mx-#{$size}#{$infix} {
+					margin-right: -#{$size}px;
+				}
+				.mb-#{$size}#{$infix},
+				.my-#{$size}#{$infix} {
+					margin-bottom: -#{$size}px;
+				}
+				.ml-#{$size}#{$infix},
+				.mx-#{$size}#{$infix} {
+					margin-left: -#{$size}px;
+				}
+			}
+		}
+
+		.ma#{$infix} {
+			margin: auto;
+		}
+		.mta#{$infix},
+		.mya#{$infix} {
+			margin-top: auto;
+		}
+		.mra#{$infix},
+		.mxa#{$infix} {
+			margin-right: auto;
+		}
+		.mba#{$infix},
+		.mya#{$infix} {
+			margin-bottom: auto;
+		}
+		.mla#{$infix},
+		.mxa#{$infix} {
+			margin-left: auto;
+		}
+	}
+}
+
+// POSITIONS  ----------------------------------------------------------------------------------------------
+
+@each $value in $map-positions {
+	@if $value != 0 {
+
+	.t#{$value}  { top: #{$value}px; }
+	.l#{$value}  { left: #{$value}px; }
+	.r#{$value}  { right: #{$value}px; }
+	.b#{$value}  { bottom: #{$value}px; }
+	
+	.t-#{$value} { top: -#{$value}px; }
+	.l-#{$value} { left: -#{$value}px; }
+	.r-#{$value} { right: -#{$value}px; }
+	.b-#{$value} { bottom: -#{$value}px; }
+
+	.t#{$value}p { top: #{$value}#{"%"}; }
+	.l#{$value}p { left: #{$value}#{"%"}; }
+	.r#{$value}p { right: #{$value}#{"%"}; }
+	.b#{$value}p { bottom: #{$value}#{"%"}; }
+
+	} 
+	@else {
+		.t#{$value} { top: $value; }
+		.l#{$value} { left: $value; }
+		.r#{$value} { right: $value; }
+		.b#{$value} { bottom: $value; }
+	}
+}
+
+.la{ left: auto; }

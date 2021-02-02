@@ -1,0 +1,32 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.db#{$infix}    { display: block; }
+		.df#{$infix}    { display: flex; }
+		.di#{$infix}    { display: inline; }
+		.dib#{$infix}   { display: inline-block}
+		.dif#{$infix}   { display: inline-flex; }
+		.dit#{$infix}   { display: inline-table; }
+		.dli#{$infix}   { display: list-item; }
+		.dn#{$infix}    { display: none; }
+		.dr#{$infix}    { display: ruby; }
+		.drb#{$infix}   { display: ruby-base; }
+		.drbc#{$infix}  { display: ruby-base-container; }
+		.dri#{$infix}   { display: run-in; }
+		.drt#{$infix}   { display: ruby-text; }
+		.drtc#{$infix}  { display: ruby-text-container; }
+		.dt#{$infix}    { display: table; }
+		.dtc#{$infix}   { display: table-cell; }
+		.dtcg#{$infix}  { display: table-column-group; }
+		.dtcl#{$infix}  { display: table-column; }
+		.dtcp#{$infix}  { display: table-caption; }
+		.dtfg#{$infix}  { display: table-footer-group; }
+		.dthg#{$infix}  { display: table-header-group; }
+		.dtr#{$infix}   { display: table-row; }
+		.dtrg#{$infix}  { display: table-row-group; }
+
+	}
+}
+
+

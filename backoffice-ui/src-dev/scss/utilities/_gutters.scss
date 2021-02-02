@@ -1,0 +1,73 @@
+// GUTTERS  ----------------------------------------------------------------------------------------------------------
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.g0#{$infix} {
+			margin-right: 0;
+			margin-left: 0;
+
+			> * {
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}
+		.gx0#{$infix} {
+			margin-right: 0;
+			margin-left: 0;
+
+			> * {
+				padding-right: 0;
+				padding-left: 0;
+			}
+		}
+
+		@each $size in $map-gutters {
+			.g#{$size}#{$infix} {
+				margin-right: #{-$size/2}px;
+				margin-left: #{-$size/2}px;
+				margin-top: #{-$size}px;
+
+				> * {
+					padding-top: #{$size}px;
+					padding-right: #{$size/2}px;
+					padding-left: #{$size/2}px;
+				}
+			}
+
+			.gx#{$size}#{$infix} {
+				margin-right: #{-$size/2}px;
+				margin-left: #{-$size/2}px;
+
+				> * {
+					padding-right: #{$size/2}px;
+					padding-left: #{$size/2}px;
+				}
+			}
+
+			.gy#{$size}#{$infix} {
+				margin-top: #{-$size}px;
+
+				> * {
+					padding-top: #{$size}px;
+				}
+			}
+
+		}
+	}
+}
+
+//------------------------------------------------------------------------------------------------------
+
+@include media-breakpoint-down(xs) {
+	.gx64 {
+		margin-right: -16px;
+		margin-left: -16px;
+
+		> * {
+			padding-right: 16px;
+			padding-left: 16px;
+		}
+	}
+}

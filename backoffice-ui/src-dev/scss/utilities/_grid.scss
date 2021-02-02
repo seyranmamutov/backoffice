@@ -1,0 +1,22 @@
+@if $enable-grid-classes {
+	.w {
+		@include make-container();
+		@include make-container-max-widths();
+	}
+}
+
+@if $enable-grid-classes {
+	.wf {
+		@include make-container();
+	}
+}
+
+@if $enable-grid-classes {
+	.r {
+		@include make-row();
+	}
+}
+
+@if $enable-grid-classes {
+	@include make-grid-columns();
+}

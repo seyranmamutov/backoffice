@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+	<meta name='theme-color' content='#333333'>
+
+	%sapper.base%
+
+	<link rel='stylesheet' href='static/styles.min.css?v=2'>
+	<link rel='manifest' href='manifest.json' crossorigin='use-credentials'>
+	<link rel='icon' type='image/ico' href='favicon.ico'>
+
+
+		<!-- Sapper generates a <style> tag containing critical CSS
+			 for the current page. CSS for the rest of the app is
+			 lazily loaded when it precaches secondary pages -->
+	%sapper.styles%
+
+	<!-- This contains the contents of the <svelte:head> component, if
+	     the current page has one -->
+	%sapper.head%
+</head>
+<body id='sapper' class='df fdc'>
+	%sapper.html%
+
+	%sapper.scripts%
+	<script src="static/libs/jquery/jquery-3.4.1.min.js"></script> 
+	<script src="static/js/libs.min.js"></script> 
+</body>
+</html>

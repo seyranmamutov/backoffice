@@ -1,0 +1,10 @@
+@each $value in $map-z-index{
+	.z#{$value}{
+		z-index: $value;
+	}
+}
+
+.za { z-index: auto; }
+.zi { z-index: inherit; }
+.z-1{z-index: -1;}
+

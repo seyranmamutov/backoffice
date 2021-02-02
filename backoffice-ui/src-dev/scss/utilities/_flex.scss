@@ -1,0 +1,56 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.fdc#{$infix}    { flex-direction: column; }
+		.fdcr#{$infix}   { flex-direction: column-reverse; }
+		.fdr#{$infix}    { flex-direction: row; }
+		.fdrr#{$infix}   { flex-direction: row-reverse; }
+		
+		.fwn#{$infix}    { flex-wrap: nowrap; }
+		.fww#{$infix}    { flex-wrap: wrap; }
+		.fwwr#{$infix}   { flex-wrap: wrap-reverse; }
+		
+		.jcc#{$infix}    { justify-content: center; }
+		.jcfe#{$infix}   { justify-content: flex-end; }
+		.jcfs#{$infix}   { justify-content: flex-start; }
+		.jcsa#{$infix}   { justify-content: space-around; }
+		.jcsb#{$infix}   { justify-content: space-between; }
+		
+		.aic#{$infix}    { align-items: center; }
+		.aife#{$infix}   { align-items: flex-end; }
+		.aifs#{$infix}   { align-items: flex-start; }
+		.ais#{$infix}    { align-items: stretch; }
+
+		.asa#{$infix}    { align-self: auto; }
+		.asfs#{$infix}   { align-self: flex-start; }
+		.asfe#{$infix}   { align-self: flex-end; }
+		.asc#{$infix}    { align-self: center; }
+		.asb#{$infix}    { align-self: baseline; }
+		.ass#{$infix}    { align-self: stretch; }
+		
+		.acc#{$infix}    { align-content: center; }
+		.acfe#{$infix}   { align-content: flex-end; }
+		.acfs#{$infix}   { align-content: flex-start; }
+		.acs#{$infix}    { align-content: stretch; }
+		.acsa#{$infix}   { align-content: space-around; }
+		.acsb#{$infix}   { align-content: space-between; }
+
+		.fg1#{$infix}     { flex-grow: 1; }
+		.fg2#{$infix}     { flex-grow: 2; }
+		.fg3#{$infix}     { flex-grow: 3; }
+
+		.ord0#{$infix}    { order: 0; }
+		.ord1#{$infix}    { order: 1; }
+		.ord2#{$infix}    { order: 2; }
+		.ord3#{$infix}    { order: 3; }
+		.ord4#{$infix}    { order: 4; }
+		.ord5#{$infix}    { order: 5; }
+
+		.f00a#{$infix}    { flex: 0 0 auto; }
+		
+	}
+}
+
+
+

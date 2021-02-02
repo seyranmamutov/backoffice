@@ -1,0 +1,93 @@
+.input,
+.select {
+	height: 40px;
+	vertical-align: middle;
+	display: inline-block;
+}
+th {
+	font: inherit;
+}
+.input,
+.select,
+.textarea {
+	max-width: 100%;
+	width: 100%;
+	padding: 0 12px;
+	background: #fff;
+	color: inherit;
+	border: 1px solid $c16;
+	border-radius: 4px;
+	transition: 0.2s ease-in-out;
+	transition-property: color, background-color, border;
+}
+
+.input,
+.textarea {
+	-webkit-appearance: none;
+}
+.input {
+	overflow: visible;
+}
+.input,
+.select,
+.textarea,
+.radio,
+.checkbox {
+	box-sizing: border-box;
+	margin: 0;
+	font: inherit;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+	outline: none;
+	background-color: $cw;
+	border-color: $cb;
+}
+
+.radio,
+.checkbox {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	overflow: hidden;
+	vertical-align: middle;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border: 1px solid #ccc;
+	transition: 0.2s ease-in-out;
+	transition-property: background-color, border;
+	border-radius: 2px;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.checkbox:checked {
+	background-color: $cb;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border: 1px solid $cb;
+	color: #fff;
+	background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' width='8px' height='8px' fill='white' viewBox='0 0 512 512'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E");
+}
+
+.textarea {
+	padding: 8px 12px;
+	min-width: 100%;
+	max-width: 100%;
+}
+.radio{
+	border-radius: 50%;
+}
+.radio:checked {
+	color:#fff;
+	background-image: url("data:image/svg+xml,%0A%3Csvg width='6' height='6' viewBox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='3' fill='white'/%3E%3C/svg%3E%0A");
+	background-color: #1e87f0;
+	border-color: transparent;
+}

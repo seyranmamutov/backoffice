@@ -1,0 +1,89 @@
+$cb2:  #fafdfe;
+$cb3:  #f2fcfe;
+$cb4:  #EDF2F9;
+$cb5:  #e9f6fb;
+$cb13: #DADCE0;
+$cb56: #5e6e82;
+$cub:  #d8f1fa;
+$clb:  #74D5DE;
+// $clb:  #76dfff;
+$cb:   #0071AC;
+
+$ci2:  #F9FAFD;
+$ci6:  #eaeff6;
+$cli:  #929eaf;
+$ci:   #4e5f83;
+$cdi:  #242939;
+
+$c2:   #fafafa;
+$c6:   #efefef;
+$c9:   #e9e9e9;
+$c9:   #e9e9e9;
+$c12:  #e1e1e1;
+$c16:  #d7d7d7;
+$c23:  #c4c4c4;
+
+$clp:  #cf81ff;
+$cp:   #8b70cc;
+
+$cy:   #ffb300;
+$cy13: #fff0bb;
+$cy24: #f1dc93;
+$clg:  #ccf6e4;
+$cg:   #2bcc71;
+$cg42: #5BCEAE;
+$cdg:  #00864e;
+$cr:   #ee5252;
+$co:   #FD9D0D;
+$cpi:  #ff5aa9;
+$cw:   #fff;
+$cbl:  #000;
+$blue: $cb;
+
+// -------------------------------------------------------------------------------------------
+
+$map-colors: (
+	
+	2:   $c2,	
+	6:   $c6,	
+	9:   $c9,
+	12:  $c12,
+	16:  $c16,
+	23:  $c23,
+	
+	b2:  $cb2,
+	b3:  $cb3,
+	b4:  $cb4,
+	b5:  $cb5,
+	b13:  $cb13,
+	b56: $cb56,
+	
+	ub:  $cub,
+	lb:  $clb,
+	b:   $cb,
+	
+	lg:  $clg,
+	g:   $cg,
+	g42: $cg42,
+	dg:  $cdg,
+		
+	i2:  $ci2,
+	i6:  $ci6,
+	
+	li:  $cli,
+	i:   $ci,
+	di:  $cdi,
+
+	lp:  $clp,
+	o:   $co,
+	p:   $cp,
+	pi:  $cpi,
+	r:   $cr,
+
+	w:   $cw,
+	bl:  $cbl,
+
+	y13: $cy13,
+	y24: $cy24,
+	y:   $cy
+);

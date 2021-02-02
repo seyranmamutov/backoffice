@@ -1,0 +1,61 @@
+.bn  { border: none; }
+.btn { border-top: none; }
+.bbn { border-bottom: none; }
+.bln { border-left: none; }
+.brn { border-right: none; }
+
+.b  { border: $border-width solid $border-color; }
+.bx { border-left: $border-width solid $border-color; border-right: $border-width solid $border-color; }
+.by { border-top: $border-width solid $border-color; border-bottom: $border-width solid $border-color; }
+.bt { border-top: $border-width solid $border-color; }
+.bb { border-bottom: $border-width solid $border-color; }
+.bl { border-left: $border-width solid $border-color; }
+.br { border-right: $border-width solid $border-color; }
+
+.bsn  { border-style: none; }
+.bsh  { border-style: hidden; }
+.bsdt { border-style: dotted; }
+.bbsdt { border-bottom-style: dotted; }
+.bsds { border-style: dashed; }
+.bss  { border-style: solid; }
+.bsdb { border-style: double; }
+.bsg  { border-style: groove; }
+.bsr  { border-style: ridge; }
+.bsin { border-style: inset; }
+.bsi  { border-style: outset; }
+
+@each $size in $map-border-width {
+	.bw#{$size}  { border-width: #{$size}px; }
+	.bxw#{$size} { border-left-width: #{$size}px; border-right-width: #{$size}px; }
+	.byw#{$size} { border-top-width: #{$size}px; border-bottom-width: #{$size}px; }
+	.btw#{$size} { border-top-width: #{$size}px; }
+	.brw#{$size} { border-right-width: #{$size}px; }
+	.bbw#{$size} { border-bottom-width: #{$size}px; }
+	.blw#{$size} { border-left-width: #{$size}px; }
+ }
+
+
+
+// -------------------------------------------------------------------------------------------
+
+.br0  { border-radius: 0; }
+.bcw37{ border-color:rgba(255, 255, 255, 0.37);}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.brc#{$infix}  { border-radius: 50%; }
+		.brp#{$infix}  { border-radius: 50rem; }
+		.brrp#{$infix} { border-top-right-radius: 50rem; border-bottom-right-radius: 50rem; }
+
+		@each $size in $map-border-radius {
+			.br#{$size}#{$infix}  { border-radius: #{$size}px; }
+			.brl#{$size}#{$infix}  { border-top-left-radius: #{$size}px; border-bottom-left-radius: #{$size}px; }
+			.brr#{$size}#{$infix}  { border-top-right-radius: #{$size}px; border-bottom-right-radius: #{$size}px; }
+			.brb#{$size}#{$infix}  { border-bottom-left-radius: #{$size}px; border-bottom-right-radius: #{$size}px; }
+			.brt#{$size}#{$infix}  { border-top-left-radius: #{$size}px; border-top-right-radius: #{$size}px; }
+			.brbl#{$size}#{$infix}  { border-bottom-left-radius: #{$size}px;}
+		 }
+	}
+}

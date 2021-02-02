@@ -1,0 +1,103 @@
+// Color contrast
+@function color-contrast($color, $dark: $ci, $light: $cw) {
+	$r: red($color);
+	$g: green($color);
+	$b: blue($color);
+
+	$yiq: (($r * 299) + ($g * 300) + ($b * 114)) / 1000;
+
+	@if ($yiq >= $yiq-contrasted-threshold) {
+		@return $dark;
+	} @else {
+		@return $light;
+	}
+}
+
+
+
+// BACKGROUNDS  ---------------------------------------------------------------------------------------
+
+@each $color, $value in $map-colors {
+
+		.bgc#{$color} {background-color: $value;}
+
+		.bgc#{$color}-h:hover {background-color: $value !important;}
+
+		.bgc#{$color}-hf:hover,
+		.bgc#{$color}-hf:focus {background-color: $value !important;}
+
+		.button.bgc#{$color} {color: color-contrast($value);background-color: $value;
+			&:hover {background-color: darken($value, 8%);text-decoration: none;}
+		}
+
+		.button-outline.bgc#{$color} {background: transparent;border-color: $value;color: $value;
+			&:hover {background: $value;border-color: $value;color: color-contrast($value);}
+		}
+}
+
+// BORDERS  -------------------------------------------------------------------------------------------
+
+@each $color, $value in $map-colors {
+
+		.bc#{$color} {
+			border-color: $value;
+		}
+		body .bc#{$color}-h:hover {
+			border-color: $value;
+		}
+		.bxc#{$color} {
+			border-left-color: $value;
+			border-right-color: $value;
+		}
+		.byc#{$color} {
+			border-top-color: $value;
+			border-bottom-color: $value;
+		}
+		.btc#{$color} {
+			border-top-color: $value;
+		}
+		.brc#{$color} {
+			border-right-color: $value;
+		}
+		.bbc#{$color} {
+			border-bottom-color: $value;
+		}
+		.blc#{$color} {
+			border-left-color: $value;
+		}
+
+}
+.bgctt { background-color: transparent; }
+.bctt { border-color: transparent; }
+.blctt { border-left-color: transparent; }
+.brctt { border-right-color: transparent; }
+.btctt { border-top-color: transparent; }
+.bbctt { border-bottom-color: transparent; }
+.cl-i * {
+	color: inherit;
+}
+
+
+// @each $color, $value in $map-colors {
+// 	.alert.bgc-#{$color} {
+// 		background: lighten($value, 28%);
+// 		border-color: lighten($value, 20%);
+// 		color: darken($value, 30%);
+// 		// @include alert-variant(theme-color-level($color, $alert-bg-level), theme-color-level($color, $alert-border-level), theme-color-level($color, $alert-color-level));
+// 	}
+// }
+
+// COLORS ----------------------------------------------------------------------------------------------
+
+@each $color, $value in $map-colors {
+	.c#{$color} {color: $value;}
+	a.c#{$color}:hover {color: darken($value, 8%);}
+	.button.c#{$color}:hover {color: darken($value, 8%);}
+	.c#{$color}-h:hover {color: $value !important;}
+	.c#{$color}-hf:hover,
+	.c#{$color}-hf:focus {color: $value !important;}
+}
+
+.ccc {color: currentColor;}
+.ctt {color: transparent;}
+.cin {color: inherit;}
