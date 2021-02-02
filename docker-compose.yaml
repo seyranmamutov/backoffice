@@ -1,0 +1,49 @@
+version: '2.1'
+
+services:
+  db:
+    container_name: db
+    image: mysql:5.7.33
+    volumes:
+      - backoffice_db
+    environment:
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_ROOT_PASSWORD=Itipie5g
+      - MYSQL_PASSWORD=Itipie5g
+      - MYSQL_DATABASE=backoffice
+      - MYSQL_USER=backoffice
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 3      
+    networks:
+      - backoffice_net
+
+  back:
+    container_name: backend
+    image: backoffice_backend
+    ports:
+      - 8080:8080
+    volumes:
+      - /tmp/backoffice:/tmp/backoffice
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/backoffice
+      - SPRING_DATASOURCE_USER=root
+      - SPRING_DATASOURCE_PASSWORD=Itipie5g
+    networks:
+      - backoffice_net
+    depends_on:
+      db:
+        condition: service_healthy
+          
+  front:
+    container_name: frontend
+    image: backoffice_frontend
+    ports:
+      - 3000:3000
+    networks:
+      - backoffice_net
+
+networks:
+    backoffice_net:
+      external: false
