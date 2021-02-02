@@ -1,3 +1,2 @@
 ./mvnw clean package
-docker build -t backoffice_backend .
-docker save backoffice_backend > backoffice_backend
+docker build -t seyranmamutov/backoffice_backend:latest .

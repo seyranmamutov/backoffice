@@ -21,7 +21,7 @@ services:
 
   back:
     container_name: backend
-    image: backoffice_backend
+    image: seyranmamutov/backoffice_backend
     ports:
       - 8080:8080
     volumes:
@@ -38,7 +38,7 @@ services:
           
   front:
     container_name: frontend
-    image: backoffice_frontend
+    image: seyranmamutov/backoffice_frontend
     ports:
       - 3000:3000
     networks:
