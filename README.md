@@ -5,7 +5,7 @@
 
 ## Run Demo
 1. Make sure **docker** and **docker-compose** is installed
-2. Review **docker-compose.yaml** configuration. It should work with by default also.
+2. Review **docker-compose.yaml** configuration. It should work with  default config also.
 3. Attention to **`/tmp/backoffice`** volume mapping for **back** container. It is where TSV files will be loaded.
 4. Run **`docker-compose up`** to start demo on localhost.
 5. <http://localhost:3000> - access to application. You can play with CRUD here. <http://localhost:8080/swagger-ui.html> - swagger UI. 
